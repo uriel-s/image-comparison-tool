@@ -112,8 +112,25 @@ class ImageComparisonTool:
         if self.reference_image is None:
             print("Error: Reference image not loaded")
             return []
+        
+        if self.test_image is None:
+            print("Error: Test image not loaded")
+            return []
             
-        height, width = self.reference_image.shape[:2]
+        # Get dimensions of both images and use the smaller bounds
+        ref_height, ref_width = self.reference_image.shape[:2]
+        test_height, test_width = self.test_image.shape[:2]
+        
+        # Use minimum dimensions to ensure points are valid for both images
+        height = min(ref_height, test_height)
+        width = min(ref_width, test_width)
+        
+        if ref_height != test_height or ref_width != test_width:
+            print(f"⚠️ Warning: Image size mismatch!")
+            print(f"   Reference: {ref_width}x{ref_height}")
+            print(f"   Test: {test_width}x{test_height}")
+            print(f"   Using safe area: {width}x{height}")
+        
         points = []
         
         if method == 'custom' and custom_points:
@@ -182,7 +199,18 @@ class ImageComparisonTool:
             
         results = []
         
+        # Get image dimensions for safety checks
+        ref_height, ref_width = self.reference_image.shape[:2]
+        test_height, test_width = self.test_image.shape[:2]
+        
         for i, (x, y) in enumerate(self.test_points):
+            # Safety check: ensure coordinates are valid for both images
+            if (x >= ref_width or y >= ref_height or 
+                x >= test_width or y >= test_height or 
+                x < 0 or y < 0):
+                print(f"⚠️ Skipping invalid point {i+1}: ({x},{y}) - outside image bounds")
+                continue
+                
             # Extract RGB values at test point
             ref_pixel = self.reference_image[y, x]
             test_pixel = self.test_image[y, x]
@@ -315,10 +343,14 @@ class ImageComparisonTool:
         pass_rate = ((len(self.comparison_results) - significant_count) / 
                     len(self.comparison_results) * 100)
         
+        # Calculate quality grade for display
+        grade, description = self._calculate_quality_grade(pass_rate)
+        
         table_data.append(["", "", "", ""])  # Separator row
         table_data.append(["SUMMARY", f"{significant_count} failures", 
                           f"{pass_rate:.1f}% pass", 
                           "PASS" if pass_rate >= 75 else "FAIL"])
+        table_data.append(["OVERALL RESULT", "", "", grade])  # Add overall grade
         
         table = axes[1, 1].table(cellText=table_data,
                                colLabels=['Point', 'Location (X,Y)', 'Difference', 'Status'],
@@ -331,10 +363,26 @@ class ImageComparisonTool:
         table.scale(1.2, 1.8)
         axes[1, 1].set_title('Test Results Summary', fontsize=12)
         
-        # Color code the summary row
-        for i in range(4):
-            if len(table_data) > len(self.comparison_results) + 1:
-                table[(len(table_data), i)].set_facecolor('#f0f0f0')
+        # Color code the summary rows
+        summary_row_index = len(self.comparison_results) + 1  # SUMMARY row
+        overall_row_index = len(self.comparison_results) + 2  # OVERALL RESULT row
+        
+        if len(table_data) > len(self.comparison_results) + 1:
+            # Color SUMMARY row
+            for i in range(4):
+                table[(summary_row_index, i)].set_facecolor('#f0f0f0')
+            
+            # Color OVERALL RESULT row based on grade
+            if len(table_data) > len(self.comparison_results) + 2:
+                grade_colors = {
+                    'EXCELLENT': '#90EE90',  # Light green
+                    'GOOD': '#98FB98',       # Pale green  
+                    'ACCEPTABLE': '#FFE4B5', # Light yellow
+                    'FAIL': '#FFB6C1'       # Light red
+                }
+                color = grade_colors.get(grade, '#f0f0f0')
+                for i in range(4):
+                    table[(overall_row_index, i)].set_facecolor(color)
         
         plt.tight_layout()
         

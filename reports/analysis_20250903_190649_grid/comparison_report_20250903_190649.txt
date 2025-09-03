@@ -1,9 +1,9 @@
 ================================================================================
 VIDEO IMAGE QUALITY COMPARISON REPORT
 ================================================================================
-Analysis Date: 2025-09-03 16:44:59
-Reference Image: reference_image.jpg
-Test Image: test_image.jpg
+Analysis Date: 2025-09-03 19:06:51
+Reference Image: ref_01.jpg
+Test Image: test_01.jpg
 
 EXECUTIVE SUMMARY:
 ----------------------------------------

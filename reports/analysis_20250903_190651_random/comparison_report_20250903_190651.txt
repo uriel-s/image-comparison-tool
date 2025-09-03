@@ -1,9 +1,9 @@
 ================================================================================
 VIDEO IMAGE QUALITY COMPARISON REPORT
 ================================================================================
-Analysis Date: 2025-09-03 16:44:57
-Reference Image: reference_image.jpg
-Test Image: test_image.jpg
+Analysis Date: 2025-09-03 19:06:52
+Reference Image: ref_01.jpg
+Test Image: test_01.jpg
 
 EXECUTIVE SUMMARY:
 ----------------------------------------
@@ -16,7 +16,7 @@ Overall result: EXCELLENT
 DETAILED PIXEL ANALYSIS:
 --------------------------------------------------------------------------------
 Test Point 1:
-  Location (X,Y): (50, 50)
+  Location (X,Y): (634, 410)
   Reference RGB: (100, 150, 199)
   Test RGB: (100, 150, 199)
   RGB Differences (R,G,B): (0, 0, 0)
@@ -24,7 +24,7 @@ Test Point 1:
   Status: PASS
 
 Test Point 2:
-  Location (X,Y): (750, 50)
+  Location (X,Y): (739, 469)
   Reference RGB: (100, 150, 199)
   Test RGB: (100, 150, 199)
   RGB Differences (R,G,B): (0, 0, 0)
@@ -32,7 +32,7 @@ Test Point 2:
   Status: PASS
 
 Test Point 3:
-  Location (X,Y): (50, 550)
+  Location (X,Y): (589, 545)
   Reference RGB: (100, 150, 199)
   Test RGB: (100, 150, 199)
   RGB Differences (R,G,B): (0, 0, 0)
@@ -40,7 +40,7 @@ Test Point 3:
   Status: PASS
 
 Test Point 4:
-  Location (X,Y): (750, 550)
+  Location (X,Y): (318, 525)
   Reference RGB: (100, 150, 199)
   Test RGB: (100, 150, 199)
   RGB Differences (R,G,B): (0, 0, 0)
@@ -48,7 +48,7 @@ Test Point 4:
   Status: PASS
 
 Test Point 5:
-  Location (X,Y): (400, 300)
+  Location (X,Y): (671, 576)
   Reference RGB: (100, 150, 199)
   Test RGB: (100, 150, 199)
   RGB Differences (R,G,B): (0, 0, 0)
@@ -56,23 +56,23 @@ Test Point 5:
   Status: PASS
 
 Test Point 6:
-  Location (X,Y): (200, 150)
-  Reference RGB: (176, 31, 48)
-  Test RGB: (176, 31, 48)
+  Location (X,Y): (622, 56)
+  Reference RGB: (100, 150, 199)
+  Test RGB: (100, 150, 199)
   RGB Differences (R,G,B): (0, 0, 0)
   Total Difference: 0.00
   Status: PASS
 
 Test Point 7:
-  Location (X,Y): (600, 150)
-  Reference RGB: (36, 238, 250)
-  Test RGB: (36, 238, 250)
+  Location (X,Y): (400, 374)
+  Reference RGB: (100, 150, 199)
+  Test RGB: (100, 150, 199)
   RGB Differences (R,G,B): (0, 0, 0)
   Total Difference: 0.00
   Status: PASS
 
 Test Point 8:
-  Location (X,Y): (400, 450)
+  Location (X,Y): (701, 577)
   Reference RGB: (100, 150, 199)
   Test RGB: (100, 150, 199)
   RGB Differences (R,G,B): (0, 0, 0)
@@ -83,7 +83,7 @@ TECHNICAL DETAILS:
 ----------------------------------------
 Difference calculation: Euclidean distance in RGB space
 Significance threshold: 30.0 (differences >= 30.0 are flagged)
-Test point selection method: strategic
+Test point selection method: random
 
 RECOMMENDATIONS:
 ----------------------------------------

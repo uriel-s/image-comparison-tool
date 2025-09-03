@@ -1,0 +1,95 @@
+================================================================================
+VIDEO IMAGE QUALITY COMPARISON REPORT
+================================================================================
+Analysis Date: 2025-09-03 18:08:25
+Reference Image: ref_03.jpg
+Test Image: test_03.jpg
+
+EXECUTIVE SUMMARY:
+----------------------------------------
+Total test points: 8
+Points with significant defects: 7
+Points passed: 1
+Pass rate: 12.5%
+Overall result: FAIL
+
+DETAILED PIXEL ANALYSIS:
+--------------------------------------------------------------------------------
+Test Point 1:
+  Location (X,Y): (50, 50)
+  Reference RGB: (31, 40, 35)
+  Test RGB: (8, 29, 30)
+  RGB Differences (R,G,B): (-23, -11, -5)
+  Total Difference: 25.98
+  Status: PASS
+
+Test Point 2:
+  Location (X,Y): (350, 50)
+  Reference RGB: (223, 43, 143)
+  Test RGB: (192, 32, 128)
+  RGB Differences (R,G,B): (-31, -11, -15)
+  Total Difference: 36.15
+  Status: FAIL (Significant defect)
+
+Test Point 3:
+  Location (X,Y): (50, 250)
+  Reference RGB: (29, 211, 110)
+  Test RGB: (9, 190, 93)
+  RGB Differences (R,G,B): (-20, -21, -17)
+  Total Difference: 33.62
+  Status: FAIL (Significant defect)
+
+Test Point 4:
+  Location (X,Y): (350, 250)
+  Reference RGB: (220, 214, 218)
+  Test RGB: (192, 192, 192)
+  RGB Differences (R,G,B): (-28, -22, -26)
+  Total Difference: 44.09
+  Status: FAIL (Significant defect)
+
+Test Point 5:
+  Location (X,Y): (200, 150)
+  Reference RGB: (127, 127, 127)
+  Test RGB: (100, 102, 101)
+  RGB Differences (R,G,B): (-27, -25, -26)
+  Total Difference: 45.06
+  Status: FAIL (Significant defect)
+
+Test Point 6:
+  Location (X,Y): (100, 75)
+  Reference RGB: (63, 63, 65)
+  Test RGB: (43, 37, 41)
+  RGB Differences (R,G,B): (-20, -26, -24)
+  Total Difference: 40.64
+  Status: FAIL (Significant defect)
+
+Test Point 7:
+  Location (X,Y): (300, 75)
+  Reference RGB: (190, 64, 137)
+  Test RGB: (160, 39, 118)
+  RGB Differences (R,G,B): (-30, -25, -19)
+  Total Difference: 43.43
+  Status: FAIL (Significant defect)
+
+Test Point 8:
+  Location (X,Y): (200, 225)
+  Reference RGB: (128, 190, 153)
+  Test RGB: (100, 161, 120)
+  RGB Differences (R,G,B): (-28, -29, -33)
+  Total Difference: 52.10
+  Status: FAIL (Significant defect)
+
+TECHNICAL DETAILS:
+----------------------------------------
+Difference calculation: Euclidean distance in RGB space
+Significance threshold: 30.0 (differences >= 30.0 are flagged)
+Test point selection method: strategic
+
+RECOMMENDATIONS:
+----------------------------------------
+✗ IMAGE QUALITY: FAIL
+  Significant pixel defects detected. Image quality is below acceptable standards.
+  Recommended action: Review and correct the imaging process immediately.
+  Significant pixel defects detected.
+  Immediate investigation and correction required.
+  Do not use for production without fixes.
