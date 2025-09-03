@@ -132,7 +132,7 @@ def get_image_paths():
             
             if choice == '1':
                 # Create or use existing sample images
-                ref_path = "images/reference_image.jpg"
+                ref_path = "images/ref_01.jpg"
                 test_path = "images/test_image.jpg"
                 
                 if os.path.exists(ref_path) and os.path.exists(test_path):
@@ -326,7 +326,7 @@ def create_sample_images():
     draw.ellipse([50, 400, 150, 500], fill=(255, 0, 255))     # Magenta
     draw.ellipse([600, 100, 700, 200], fill=(0, 255, 255))    # Cyan
     
-    reference.save('images/reference_image.jpg')
+    reference.save('images/ref_01.jpg')
     
     # Create test image with defects
     test = reference.copy()
@@ -350,12 +350,12 @@ def create_sample_images():
             min(255, max(0, b + np.random.randint(-50, 51)))
         )
     
-    test.save('images/test_image.jpg')
+    test.save('images/test_01.jpg')
     print("✅ Sample images created successfully!")
-    print(f"   📁 Reference: images/reference_image.jpg ({width}x{height})")
-    print(f"   📁 Test: images/test_image.jpg ({width}x{height})")
+    print(f"   📁 Reference: images/ref_01.jpg ({width}x{height})")
+    print(f"   📁 Test: images/test_01.jpg ({width}x{height})")
     
-    return 'images/reference_image.jpg', 'images/test_image.jpg'
+    return 'images/ref_01.jpg', 'images/test_01.jpg'
 
 
 def run_interactive_demo():

@@ -534,8 +534,8 @@ if __name__ == "__main__":
     print("=" * 50)
     
     # Define image paths
-    reference_path = "images/reference_image.jpg"
-    test_path = "images/test_image.jpg"
+    reference_path = "images/ref_01.jpg"
+    test_path = "images/test_01.jpg"
     
     # Check if images exist
     if os.path.exists(reference_path) and os.path.exists(test_path):
@@ -551,7 +551,7 @@ if __name__ == "__main__":
         )
     else:
         print("📝 Setup required:")
-        print("   1. Place reference image at: images/reference_image.jpg")
-        print("   2. Place test image at: images/test_image.jpg")
+        print("   1. Place reference image at: images/ref_01.jpg")
+        print("   2. Place test image at: images/test_01.jpg")
         print("   3. Run this script again")
         print("\nAlternatively, run demo.py to see system with sample images.")

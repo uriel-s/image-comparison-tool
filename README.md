@@ -6,7 +6,7 @@ A Python tool for comparing two images to detect visual differences and defects.
 
 Perfect for:
 
-- 📸 Quality control - comparing before/after images
+- 📸 Quality├── images/ # 🖼️ Input images │ ├── ref_01.jpg, ref_02.jpg, ref_03.jpg... │ └── test_01.jpg, test_02.jpg, test_03.jpg...ntrol - comparing before/after images
 - 🔍 Defect detection - finding differences between images
 - 📊 Analysis reports - getting detailed comparison results
 
@@ -39,13 +39,13 @@ python demo.py
 🎯 **For interactive use:**
 
 ```bash
-python interactive_demo.py
+python interactive_tool.py
 ```
 
 💻 **For command line:**
 
 ```bash
-python run_checker.py reference.jpg test.jpg
+python cli_tool.py reference.jpg test.jpg
 ```
 
 ## Installation
@@ -60,8 +60,8 @@ pip install -r requirements.txt
 
 Place images in the `images/` directory:
 
-- `reference_image.jpg` - Reference image
-- `test_image.jpg` - Test image
+- `ref_01.jpg` - Reference image
+- `test_01.jpg` - Test image
 
 ## Detailed Usage Options
 
@@ -76,7 +76,7 @@ Creates sample images and runs analysis with all 3 methods (strategic/grid/rando
 ### 2. Interactive Mode
 
 ```bash
-python interactive_demo.py
+python interactive_tool.py
 ```
 
 Full control: choose images, methods, points, and output options.
@@ -85,10 +85,10 @@ Full control: choose images, methods, points, and output options.
 
 ```bash
 # Basic usage
-python run_checker.py reference.jpg test.jpg
+python cli_tool.py reference.jpg test.jpg
 
 # With specific options
-python run_checker.py ref.jpg test.jpg --method strategic --threshold 25.0 --quiet
+python cli_tool.py ref.jpg test.jpg --method strategic --threshold 25.0 --quiet
 ```
 
 ## Test Point Selection Methods
@@ -104,10 +104,10 @@ python run_checker.py ref.jpg test.jpg --method strategic --threshold 25.0 --qui
 
 ```bash
 # Strategic (recommended)
-python run_checker.py ref.jpg test.jpg --method strategic
+python cli_tool.py ref.jpg test.jpg --method strategic
 
 # Custom points
-python run_checker.py ref.jpg test.jpg --custom 100,100 200,200 300,300
+python cli_tool.py ref.jpg test.jpg --custom 100,100 200,200 300,300
 ```
 
 ## Getting Started
@@ -125,7 +125,7 @@ Place your images in `images/` folder or specify full paths. **Supported formats
 ### Option 3: Interactive Mode (Recommended) 🎯
 
 ```bash
-python interactive_demo.py  # Choose everything step by step
+python interactive_tool.py  # Choose everything step by step
 ```
 
 ## What You Get
@@ -179,13 +179,12 @@ ACCEPTABLE_THRESHOLD = 75.0   # 75%+ pass rate = ACCEPTABLE
 
 ## Project Structure
 
-```
+````
 image_comparison_tool/
 ├── image_comparison_tool.py  # ⭐ Main analysis class
-├── demo.py                  # 🚀 Auto demonstration  
-├── interactive_demo.py      # 🎯 Interactive interface
-├── run_checker.py           # 💻 Command line interface
-├── simple_demo.py           # 📝 Simple example
+├── demo.py                  # 🚀 Auto demonstration
+├── interactive_tool.py      # 🎯 Interactive interface
+├── cli_tool.py              # 💻 Command line interface
 ├── create_test_images.py    # 🖼️ Test image generator
 ├── requirements.txt         # 📦 Dependencies
 ├── README.md               # 📖 This guide
@@ -200,8 +199,10 @@ image_comparison_tool/
 
 ### Image Loading Error
 
-```
+````
+
 Error: Cannot load images - check file paths
+
 ```
 
 **Solution**: Verify images exist and are in supported format (JPG, PNG, BMP)
@@ -211,3 +212,4 @@ Error: Cannot load images - check file paths
 The system supports images of different sizes, but using same-sized images is recommended for more accurate results.
 
 l use.
+```

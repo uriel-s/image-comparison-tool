@@ -40,8 +40,8 @@ def create_test_images_with_defects():
     # Add some geometric shapes
     draw_ref.ellipse([300, 250, 500, 350], fill=(150, 100, 250))  # Purple circle
     
-    reference.save('images/reference_defect_test.jpg')
-    print("✓ Reference image created: images/reference_defect_test.jpg")
+    reference.save('images/ref_02.jpg')
+    print("✓ Reference image created: images/ref_02.jpg")
     
     # Create test image with various types of defects
     test = reference.copy()
@@ -82,10 +82,10 @@ def create_test_images_with_defects():
         pixels[x, y + 1] = (255, 0, 255)
     print("  Added: Line defect")
     
-    test.save('images/test_defect_test.jpg')
-    print("✓ Test image created: images/test_defect_test.jpg")
+    test.save('images/test_02.jpg')
+    print("✓ Test image created: images/test_02.jpg")
     
-    return 'images/reference_defect_test.jpg', 'images/test_defect_test.jpg'
+    return 'images/ref_02.jpg', 'images/test_02.jpg'
 
 def create_gradient_test_images():
     """
@@ -107,7 +107,7 @@ def create_gradient_test_images():
             b = int(255 * (x + y) / (width + height))
             pixels_ref[x, y] = (r, g, b)
     
-    reference.save('images/reference_gradient.jpg')
+    reference.save('images/ref_03.jpg')
     
     # Test - gradient with steps/banding
     test = Image.new('RGB', (width, height))
@@ -121,10 +121,10 @@ def create_gradient_test_images():
             b = int((255 * (x + y) / (width + height)) // 32) * 32
             pixels_test[x, y] = (r, g, b)
     
-    test.save('images/test_gradient.jpg')
-    print("✓ Gradient images created: reference_gradient.jpg & test_gradient.jpg")
+    test.save('images/test_03.jpg')
+    print("✓ Gradient images created: ref_03.jpg & test_03.jpg")
     
-    return 'images/reference_gradient.jpg', 'images/test_gradient.jpg'
+    return 'images/ref_03.jpg', 'images/test_03.jpg'
 
 if __name__ == "__main__":
     print("=" * 60)

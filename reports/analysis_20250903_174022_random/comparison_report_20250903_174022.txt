@@ -1,0 +1,60 @@
+================================================================================
+VIDEO IMAGE QUALITY COMPARISON REPORT
+================================================================================
+Analysis Date: 2025-09-03 17:40:23
+Reference Image: ref_01.jpg
+Test Image: test_01.jpg
+
+EXECUTIVE SUMMARY:
+----------------------------------------
+Total test points: 4
+Points with significant defects: 0
+Points passed: 4
+Pass rate: 100.0%
+Overall result: EXCELLENT
+
+DETAILED PIXEL ANALYSIS:
+--------------------------------------------------------------------------------
+Test Point 1:
+  Location (X,Y): (14, 128)
+  Reference RGB: (100, 150, 199)
+  Test RGB: (100, 150, 199)
+  RGB Differences (R,G,B): (0, 0, 0)
+  Total Difference: 0.00
+  Status: PASS
+
+Test Point 2:
+  Location (X,Y): (461, 315)
+  Reference RGB: (100, 150, 199)
+  Test RGB: (100, 150, 199)
+  RGB Differences (R,G,B): (0, 0, 0)
+  Total Difference: 0.00
+  Status: PASS
+
+Test Point 3:
+  Location (X,Y): (772, 139)
+  Reference RGB: (100, 150, 199)
+  Test RGB: (100, 150, 199)
+  RGB Differences (R,G,B): (0, 0, 0)
+  Total Difference: 0.00
+  Status: PASS
+
+Test Point 4:
+  Location (X,Y): (304, 224)
+  Reference RGB: (0, 255, 1)
+  Test RGB: (0, 255, 1)
+  RGB Differences (R,G,B): (0, 0, 0)
+  Total Difference: 0.00
+  Status: PASS
+
+TECHNICAL DETAILS:
+----------------------------------------
+Difference calculation: Euclidean distance in RGB space
+Significance threshold: 30.0 (differences >= 30.0 are flagged)
+Test point selection method: random
+
+RECOMMENDATIONS:
+----------------------------------------
+✓ IMAGE QUALITY: EXCELLENT
+  No significant pixel defects detected. Image is suitable for production use.
+  Recommended action: Continue with current process.
