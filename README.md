@@ -12,7 +12,10 @@ Professional video quality analysis tool for detecting defects in images.
 
 ```bash
 python -m streamlit run gui/streamlit_gui.py
+python -m streamlit run gui/streamlit_gui.py
 ```
+
+Then open: http://localhost:8501
 
 Then open: http://localhost:8501
 
@@ -20,7 +23,10 @@ Then open: http://localhost:8501
 
 ```bash
 python tools/interactive_tool.py
+python tools/interactive_tool.py
 ```
+
+Step-by-step guided interface in terminal
 
 Step-by-step guided interface in terminal
 
@@ -28,7 +34,10 @@ Step-by-step guided interface in terminal
 
 ```bash
 python tools/cli_tool.py images/ref_01.jpg images/test_01.jpg
+python tools/cli_tool.py images/ref_01.jpg images/test_01.jpg
 ```
+
+## 🔧 Installation
 
 ## 🔧 Installation
 
@@ -69,11 +78,15 @@ pip install -r requirements.txt
 ```bash
 # Basic usage
 python tools/cli_tool.py ref.jpg test.jpg
+python tools/cli_tool.py ref.jpg test.jpg
 
+# With specific parameters
+python tools/cli_tool.py ref.jpg test.jpg --method strategic --points 8 --threshold 30.0
 # With specific parameters
 python tools/cli_tool.py ref.jpg test.jpg --method strategic --points 8 --threshold 30.0
 
 # Custom points
+python tools/cli_tool.py ref.jpg test.jpg --method custom --custom 100,100 200,200 300,300
 python tools/cli_tool.py ref.jpg test.jpg --method custom --custom 100,100 200,200 300,300
 ```
 
