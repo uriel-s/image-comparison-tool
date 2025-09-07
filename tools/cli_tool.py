@@ -12,6 +12,9 @@ Usage examples:
 import argparse
 import sys
 import os
+
+# Add src directory to path for imports
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'src'))
 from image_comparison_tool import ImageComparisonTool
 
 

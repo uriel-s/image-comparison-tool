@@ -9,6 +9,10 @@ import numpy as np
 from PIL import Image, ImageDraw
 import matplotlib.pyplot as plt
 import os
+import sys
+
+# Add src directory to path for imports
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'src'))
 from image_comparison_tool import ImageComparisonTool
 
 
