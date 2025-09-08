@@ -112,7 +112,7 @@ def main():
         
         if ref_file:
             ref_image = Image.open(ref_file)
-            st.image(ref_image, caption=f"Reference: {ref_file.name}", use_column_width=True)
+            st.image(ref_image, caption=f"Reference: {ref_file.name}", use_container_width=True)
     
     with col2:
         st.subheader("🔬 Test Image")
@@ -125,7 +125,7 @@ def main():
         
         if test_file:
             test_image = Image.open(test_file)
-            st.image(test_image, caption=f"Test: {test_file.name}", use_column_width=True)
+            st.image(test_image, caption=f"Test: {test_file.name}", use_container_width=True)
     
     # Analysis section
     st.markdown("---")
@@ -283,7 +283,7 @@ def display_results(checker):
             if viz_files:
                 viz_path = os.path.join(reports_dir, latest_dir, viz_files[0])
                 st.subheader("📊 Visual Analysis")
-                st.image(viz_path, caption="Detailed Comparison Chart", use_column_width=True)
+                st.image(viz_path, caption="Detailed Comparison Chart", use_container_width=True)
                 
                 # Download button for visualization
                 with open(viz_path, "rb") as file:
